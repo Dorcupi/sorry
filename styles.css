@@ -12,6 +12,32 @@ body {
     margin-top: 100px;
 }
 
+#datetime-container {
+    margin-bottom: 20px;
+}
+
+#date, #time {
+    font-size: 24px;
+    margin: 0;
+}
+
+#notifications {
+    margin-bottom: 20px;
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+}
+
+.notification {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
 #password {
     font-size: 24px;
     padding: 10px;
@@ -60,7 +86,7 @@ body {
 
 #sorry-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
     grid-gap: 10px;
 }
 
@@ -74,6 +100,23 @@ body {
 
 .sorry-item:hover {
     background-color: #ffcccc;
+}
+
+#footer-title {
+    margin-top: 20px;
+    font-size: 16px;
+}
+
+.popup {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: opacity 0.3s ease-in-out;
 }
 
 .dark-mode {
@@ -93,6 +136,11 @@ body {
 
 .dark-mode .sorry-item:hover {
     background-color: #bb4444;
+}
+
+.dark-mode .popup {
+    background-color: #f4f4f4;
+    color: #333;
 }
 
 @media (max-width: 600px) {
