@@ -11,10 +11,12 @@
         <h2>Enter Your Password</h2>
         <input type="password" id="password" maxlength="4">
         <button onclick="submitPassword()">Submit</button>
+        <p id="error-message"></p>
     </div>
 
     <div id="sorry-page" style="display: none;">
         <button id="dark-mode-toggle" onclick="toggleDarkMode()">Dark Mode</button>
+        <button id="back-to-lock" onclick="returnToLockScreen()">Lock Screen</button>
         <h1 id="main-title">I'm sorry for...</h1>
         <h3 id="person-title"></h3>
         <div id="sorry-grid">

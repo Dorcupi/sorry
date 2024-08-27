@@ -22,16 +22,30 @@ body {
     padding: 20px;
 }
 
-#dark-mode-toggle {
+#error-message {
+    color: red;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+#dark-mode-toggle,
+#back-to-lock {
     position: absolute;
     top: 20px;
-    right: 20px;
     padding: 10px;
     cursor: pointer;
     background-color: #333;
     color: #fff;
     border: none;
     border-radius: 5px;
+}
+
+#dark-mode-toggle {
+    right: 20px;
+}
+
+#back-to-lock {
+    left: 20px;
 }
 
 #main-title {
@@ -67,7 +81,8 @@ body {
     color: #f4f4f4;
 }
 
-.dark-mode #dark-mode-toggle {
+.dark-mode #dark-mode-toggle,
+.dark-mode #back-to-lock {
     background-color: #f4f4f4;
     color: #333;
 }
