@@ -1,0 +1,45 @@
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+#password-screen {
+    margin-top: 100px;
+}
+
+#password {
+    font-size: 24px;
+    padding: 10px;
+    width: 100px;
+}
+
+#sorry-page {
+    padding: 50px;
+}
+
+#main-title {
+    font-size: 48px;
+    margin-bottom: 50px;
+}
+
+#sorry-grid {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-gap: 10px;
+}
+
+.sorry-item {
+    background-color: #ccc;
+    padding: 20px;
+    font-size: 24px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.sorry-item:hover {
+    background-color: #ffcccc;
+}
