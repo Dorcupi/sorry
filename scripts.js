@@ -1,28 +1,89 @@
 // scripts.js
 
-// Example apologies based on passwords
+// The apologies
 const apologies = {
-    "1234": {
-        name: "John",
+    "kjc4": {
+        name: "Elizabeth",
         messages: [
             "making you worry about me",
-            "being late",
-            "forgetting your birthday",
-            "not being there for you",
-            "saying something hurtful"
+            "being a weird person",
+            "being embarassing",
+            "ruining your day sometimes",
+            "being selfish",
+            "not giving back to you",
+            "all the times you got stuff for me",
+            "not paying attention at times",
+            "never calling you by your name",
+            "being the worst person alive",
+            "not giving good gifts",
+            "not being appreciative enough",
+            "my behaviour",
+            "making my problems your problems",
+            "not looking good",
+            "not smelling good",
+            "not feeling good",
+            "my weird panic attacks",
+            "being a slob",
+            "not being a team player",
+            "not being supportive",
+            "being bad at helping others",
+            "being very sus",
+            "not being good at apologizing",
+            "not being good at making websites",
+            "being stubborn",
+            "overthinking things",
+            "taking you for granted",
+            "interrupting you all the time",
+            "annoying you all the time",
+            "being too clingy",
+            "being too sarcastic at times",
+            "not being reliable",
+            "talking too much",
+            "many other things that I can't recall rn",
         ]
     },
-    "5678": {
-        name: "Jane",
+    "qrt8": {
+        name: "Denise",
         messages: [
-            "not calling you back",
-            "canceling plans",
-            "not listening",
-            "being distant",
-            "acting selfish"
+            "being a weird person",
+            "being embarassing",
+            "being selfish",
+            "not paying attention at times",
+            "being the worst person alive",
+            "not giving good gifts",
+            "not being appreciative enough",
+            "my behaviour",
+            "making my problems your problems",
+            "not looking good",
+            "not smelling good",
+            "not feeling good",
+            "my weird panic attacks",
+            "being a slob",
+            "not being supportive",
+            "being bad at helping others",
+            "being very sus",
+            "not being good at apologizing",
+            "not being good at making websites",
+            "being stubborn",
+            "overthinking things",
+            "taking you for granted",
+            "interrupting you all the time",
+            "annoying you all the time",
+            "being too clingy",
+            "being too sarcastic at times",
+            "not being reliable",
+            "talking too much",
+            "many other things that I can't recall rn",
         ]
     }
 };
+
+const notifications = [
+    "8/27/24 - New apologies added!",
+    "Made by: Divine Ejiogu",
+]
+
+const click = new Audio('click1.mp3');
 
 let currentApologies = [];
 let failedAttempts = 0;
@@ -68,6 +129,7 @@ function showSorryPage() {
     document.getElementById('password-screen').style.display = 'none';
     document.getElementById('sorry-page').style.display = 'block';
     generateSorryGrid();
+    click.play()
 }
 
 // Function to generate the grid of sorry items
@@ -75,7 +137,7 @@ function showSorryPage() {
 function generateSorryGrid() {
     const grid = document.getElementById('sorry-grid');
     grid.innerHTML = '';
-    for (let i = 0; i < 100; i++) {
+    for (let i = 0; i < currentApologies.length; i++) {
         const item = document.createElement('div');
         item.className = 'sorry-item';
         item.innerText = 'sorry';
@@ -100,11 +162,13 @@ function returnToLockScreen() {
     document.getElementById('password').value = ''; // Clear the password field
     document.getElementById('main-title').innerText = "I'm sorry for..."; // Reset main title
     document.getElementById('error-message').innerText = ''; // Clear error message
+    click.play()
 }
 
 // Function to toggle dark mode
 function toggleDarkMode() {
     document.body.classList.toggle('dark-mode');
+    click.play()
 }
 
 // Function to update the popup text
@@ -138,12 +202,18 @@ function addNotification(text) {
     const notification = document.createElement('div');
     notification.className = 'notification';
     notification.innerText = text;
+    notification.onclick = function() {
+        this.remove()
+        click.play()
+    };
     notifications.appendChild(notification);
 }
 
-// Example: Adding a notification on load
-addNotification("New message from John.");
-addNotification("Your package has been delivered.");
+function generateNotifications() {
+    notifications.forEach(addNotification)
+}
+
+generateNotifications()
 
 function checkScrollPosition() {
     const mainTitle = document.getElementById('main-title');
