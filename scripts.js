@@ -157,8 +157,8 @@ function generateSorryGrid() {
 
 // Function to return to the lock screen
 function returnToLockScreen() {
-    document.getElementById('sorry-page').style.display = 'none';
-    document.getElementById('password-screen').style.display = 'block';
+    document.getElementById('sorry-page').style.display = 'none'; // Hide sorry page
+    document.getElementById('password-screen').style.display = 'block'; // Show password screen
     document.getElementById('password').value = ''; // Clear the password field
     document.getElementById('main-title').innerText = "I'm sorry for..."; // Reset main title
     document.getElementById('error-message').innerText = ''; // Clear error message
