@@ -2,20 +2,26 @@
 
 // Example apologies based on passwords
 const apologies = {
-    "1234": [
-        "making you worry about me",
-        "being late",
-        "forgetting your birthday",
-        "not being there for you",
-        "saying something hurtful"
-    ],
-    "5678": [
-        "not calling you back",
-        "canceling plans",
-        "not listening",
-        "being distant",
-        "acting selfish"
-    ]
+    "1234": {
+        name: "John",
+        messages: [
+            "making you worry about me",
+            "being late",
+            "forgetting your birthday",
+            "not being there for you",
+            "saying something hurtful"
+        ]
+    },
+    "5678": {
+        name: "Jane",
+        messages: [
+            "not calling you back",
+            "canceling plans",
+            "not listening",
+            "being distant",
+            "acting selfish"
+        ]
+    }
 };
 
 let currentApologies = [];
@@ -23,7 +29,8 @@ let currentApologies = [];
 function submitPassword() {
     const password = document.getElementById('password').value;
     if (apologies[password]) {
-        currentApologies = apologies[password];
+        currentApologies = apologies[password].messages;
+        document.getElementById('person-title').innerText = `For ${apologies[password].name}`;
         showSorryPage();
     } else {
         alert('Incorrect password');
@@ -48,4 +55,8 @@ function generateSorryGrid() {
         };
         grid.appendChild(item);
     }
+}
+
+function toggleDarkMode() {
+    document.body.classList.toggle('dark-mode');
 }

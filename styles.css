@@ -5,6 +5,7 @@ body {
     background-color: #f4f4f4;
     margin: 0;
     padding: 0;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 #password-screen {
@@ -18,28 +19,82 @@ body {
 }
 
 #sorry-page {
-    padding: 50px;
+    padding: 20px;
+}
+
+#dark-mode-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 10px;
+    cursor: pointer;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
 }
 
 #main-title {
-    font-size: 48px;
-    margin-bottom: 50px;
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+#person-title {
+    font-size: 18px;
+    margin-bottom: 40px;
 }
 
 #sorry-grid {
     display: grid;
-    grid-template-columns: repeat(10, 1fr);
+    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
     grid-gap: 10px;
 }
 
 .sorry-item {
     background-color: #ccc;
-    padding: 20px;
-    font-size: 24px;
+    padding: 10px;
+    font-size: 18px;
     border-radius: 5px;
     transition: background-color 0.3s;
 }
 
 .sorry-item:hover {
     background-color: #ffcccc;
+}
+
+.dark-mode {
+    background-color: #121212;
+    color: #f4f4f4;
+}
+
+.dark-mode #dark-mode-toggle {
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.dark-mode .sorry-item {
+    background-color: #444;
+}
+
+.dark-mode .sorry-item:hover {
+    background-color: #bb4444;
+}
+
+@media (max-width: 600px) {
+    #main-title {
+        font-size: 24px;
+    }
+
+    #person-title {
+        font-size: 16px;
+    }
+
+    #sorry-grid {
+        grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
+    }
+
+    .sorry-item {
+        padding: 8px;
+        font-size: 16px;
+    }
 }
